@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+## Description
+This project is a website for Epicodus MC, a local 1%er Motorcycle club.
+
+## Deployment
+Clone this repository.
+Run "bower install" and "npm install".
+Create a firebase database, import sample-members.json, and copy the firebase config to src/app/api-keys.ts.
+From the command line run "ng s".
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
