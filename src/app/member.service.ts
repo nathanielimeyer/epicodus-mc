@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Member } from './member.model';
 import { MEMBERS } from './mock-members';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class MemberService {
+  members: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private database: AngularFireDatabase) {
+    this.members = database.list('members');
+  }
 
   getMembers() {
-    return MEMBERS;
+    return this.members;
   }
 
-  getMemberById(memberId: number){
-    for (var i = 0; i <= MEMBERS.length; i++) {
-      if (MEMBERS[i].id === memberId) {
-        return MEMBERS[i];
-      }
-    }
-  }
+  getMemberById(memberId: number) {}
 
 }

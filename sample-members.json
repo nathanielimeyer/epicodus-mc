@@ -1,0 +1,26 @@
+{ "members": [{
+    "clubName": "Beast",
+    "realName": "Michael",
+    "age": 30,
+    "likes": "Riding",
+    "dislikes": "Pigs",
+    "address": "400 SE 6th",
+    "incarcerated": false
+  }, {
+    "clubName": "Road Rage",
+    "realName": "Perry",
+    "age": 30,
+    "likes": "Riding",
+    "dislikes": "Feeling cooped up",
+    "address": "San Quentin",
+    "incarcerated": true
+  }, {
+    "clubName": "Bit Schredder",
+    "realName": "Courtney",
+    "age": 30,
+    "likes": "Riding",
+    "dislikes": "Pigs",
+    "address": "400 SE 6th",
+    "incarcerated": false
+  }]
+}
