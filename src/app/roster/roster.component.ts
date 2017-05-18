@@ -8,7 +8,26 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-roster',
-  templateUrl: './roster.component.html',
+  template: `<h2>Roster</h2>
+
+    <select (change)="onChange($event.target.value)">
+      <option value="allMembers" selected="selected">All Members</option>
+      <option value="true">Incarcerated Members</option>
+      <option value="false">Members on Parole</option>
+    </select>
+
+    <div *ngFor="let member of members | async | incarceratedFilter:incarceratedStatus" class="panel panel-default">
+
+    <div class="panel-body">
+      <h3 (click)="goToDetailPage(member)"><em>{{member.clubName}}</em> at {{member.address}}</h3>
+      <div *ngIf="currentRoute === '/admin'">
+        {{member.clubName}}
+        <hr>
+        <app-edit-member [selectedMember]="member"></app-edit-member>
+      </div>
+    </div>
+  </div>
+`,
   styleUrls: ['./roster.component.css'],
   providers: [MemberService]
 })
@@ -16,7 +35,8 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 export class RosterComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  
+  incarceratedStatus: string = "allMembers";
+
   constructor(private router: Router, private memberService: MemberService) { }
 
   goToDetailPage(clickedMember) {
@@ -25,6 +45,11 @@ export class RosterComponent implements OnInit {
 
   ngOnInit() {
     this.members = this.memberService.getMembers();
+  };
+
+  onChange(optionFromMenu){
+    this.incarceratedStatus = optionFromMenu;
+    console.log(this.incarceratedStatus);
   }
 
 }

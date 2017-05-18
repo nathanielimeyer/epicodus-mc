@@ -36,7 +36,7 @@ export class MemberService {
                                 incarcerated: localUpdatedMember.incarcerated});
   }
 
-  deleteMember(localMemberToDelete){
+  deleteMember(localMemberToDelete) {
     var memberEntryInFirebase = this.getMemberById(localMemberToDelete.$key);
     memberEntryInFirebase.remove();
   }
