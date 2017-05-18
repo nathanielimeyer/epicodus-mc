@@ -1,9 +1,9 @@
 <div>
-  <h3>Club Name: {{memberToDisplay.clubName}}</h3>
-  <h4>Civilian Name: {{memberToDisplay.realName}}</h4>
-  <p>Age: {{memberToDisplay.age}}</p>
-  <p>Likes: {{memberToDisplay.likes}}</p>
-  <p>Dislikes: {{memberToDisplay.dislikes}}</p>
-  <p>Address: {{memberToDisplay.address}}</p>
-  <p>Incarcerated: {{memberToDisplay.incarcerated}}</p>
+  <h3>Club Name: {{(memberToDisplay | async)?.clubName}}</h3>
+  <h4>Civilian Name: {{(memberToDisplay | async)?.realName}}</h4>
+  <p>Age: {{(memberToDisplay | async)?.age}}</p>
+  <p>Likes: {{(memberToDisplay | async)?.likes}}</p>
+  <p>Dislikes: {{(memberToDisplay | async)?.dislikes}}</p>
+  <p>Address: {{(memberToDisplay | async)?.address}}</p>
+  <p>Incarcerated: {{(memberToDisplay | async)?.incarcerated}}</p>
 </div>

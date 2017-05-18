@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Patch in a new member:</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Club Name:</label>
+        <br>
+        <input #clubName>
+      </div>
+
+      <div>
+        <label>Civilian Name:</label>
+        <br>
+        <input #realName>
+      </div>
+
+      <div>
+        <label>Age:</label>
+        <br>
+        <input #age>
+      </div>
+
+      <div>
+        <label>Likes:</label>
+        <br>
+        <input #likes>
+      </div>
+
+      <div>
+        <label>Dislikes:</label>
+        <br>
+        <input #dislikes>
+      </div>
+
+      <div>
+        <label>Address:</label>
+        <br>
+        <input #address>
+      </div>
+
+      <div>
+        <label>Incarcerated:</label>
+        <br>
+        <input #incarcerated>
+      </div>
+      <button (click)="submitForm(clubName.value, realName.value, age.value, likes.value, dislikes.value, address.value, incarcerated.value)">Add</button>
+    </div>
+  </div>
+</div>
+
+<div>
+  <app-roster></app-roster>
+</div>

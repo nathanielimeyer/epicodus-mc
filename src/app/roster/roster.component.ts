@@ -15,11 +15,12 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 export class RosterComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
-
+  currentRoute: string = this.router.url;
+  
   constructor(private router: Router, private memberService: MemberService) { }
 
-  goToDetailPage(clickedMember: Member) {
-    // this.router.navigate(['members', clickedMember.id]);
+  goToDetailPage(clickedMember) {
+    this.router.navigate(['members', clickedMember.$key]);
   };
 
   ngOnInit() {

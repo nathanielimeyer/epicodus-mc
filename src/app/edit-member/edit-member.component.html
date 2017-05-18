@@ -1,0 +1,24 @@
+<h4>Edit member:</h4>
+        <label>Club Name:</label>
+        <input [(ngModel)]="selectedMember.clubName">
+        <br>
+        <label>Civilian Name:</label>
+        <input [(ngModel)]="selectedMember.realName">
+        <br>
+        <label>Age:</label>
+        <input [(ngModel)]="selectedMember.age">
+        <br>
+        <label>Likes:</label>
+        <input [(ngModel)]="selectedMember.likes">
+        <br>
+        <label>Dislikes:</label>
+        <input [(ngModel)]="selectedMember.dislikes">
+        <br>
+        <label>Address:</label>
+        <input [(ngModel)]="selectedMember.address">
+        <br>
+        <label>Incarcerated:</label>
+        <input [(ngModel)]="selectedMember.incarcerated">
+      <button (click)="beginUpdatingMember(selectedMember)">Update</button>
+      <hr>
+      <button (click)="beginDeletingMember(selectedMember)">Delete</button>

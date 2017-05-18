@@ -4,6 +4,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { RosterComponent } from './roster/roster.component';
 import { MemberDetailsComponent } from './member-details/member-details.component';
+import { AdminComponent } from './admin/admin.component';
+import { EditMemberComponent } from './edit-member/edit-member.component';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +20,9 @@ const appRoutes: Routes = [
   }, {
     path: 'members/:id',
     component: MemberDetailsComponent
+  }, {
+    path: 'admin',
+    component: AdminComponent
   }
 ];
 
