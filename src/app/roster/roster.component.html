@@ -1,0 +1,7 @@
+<h2>Roster</h2>
+
+<div *ngFor="let member of members" (click)="goToDetailPage(member)" class="panel panel-default">
+  <div class="panel-body">
+    <h3><em>{{member.clubName}}</em> at {{member.address}}</h3>
+  </div>
+</div>
